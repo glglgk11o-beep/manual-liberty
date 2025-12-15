@@ -4,120 +4,229 @@
   <meta charset="UTF-8" />
   <title>Начало работы на Liberty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    body {
+    :root{
+      --text:#222;
+      --muted:#666;
+      --border:#e9e9e9;
+      --bg:#fff;
+      --link:#2b6cb0;
+    }
+
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #222;
-      margin: 0;
-      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      margin:0;
     }
 
-    .header-image {
-      height: 220px;
-      background: #f2f2f2;
+    /* место под картинку */
+    .header-image{
+      height:220px;
+      background:#f2f2f2;
     }
 
-    .container {
-      max-width: 900px;
+    .container{
+      max-width: 980px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 20px 80px;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 40px;
+    h1{
+      text-align:center;
+      font-size:36px;
+      font-weight:700;
+      margin: 0 0 28px;
     }
 
-    .toc {
+    /* Оглавление */
+    .toc{
+      font-size:16px;
+      line-height:1.9;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .toc a{
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .toc a:hover{ color: var(--link); }
+
+    .toc .section{ margin-top: 14px; }
+    .toc .subsection{ margin-left: 24px; }
+
+    hr{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    /* Контент */
+    .content{
+      max-width: 760px;
+      margin: 0 auto;
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
-    .toc .section {
-      margin-top: 14px;
+    .content h2{
+      font-size: 28px;
+      font-weight: 700;
+      margin: 48px 0 14px;
     }
 
-    .toc .subsection {
-      margin-left: 20px;
+    .content h3{
+      font-size: 20px;
+      font-weight: 700;
+      margin: 28px 0 10px;
+    }
+
+    .content p{ margin: 10px 0; }
+    .content ol{ margin: 10px 0 10px 22px; }
+    .content ul{ margin: 10px 0 10px 22px; }
+
+    .note{
+      border-left: 4px solid #d0d0d0;
+      padding: 10px 12px;
+      background: #fafafa;
+      margin: 14px 0;
+    }
+
+    .warn{
+      border-left: 4px solid #ff4d4f;
+      padding: 10px 12px;
+      background: #fff7f7;
+      margin: 14px 0;
+    }
+
+    /* Место под скриншоты */
+    .screens{
+      margin: 14px 0 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .screen{
+      border: 1px dashed #cfcfcf;
+      border-radius: 10px;
+      height: 220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#888;
+      font-size: 14px;
+      background:#fcfcfc;
+    }
+
+    @media (max-width: 720px){
+      .screens{ grid-template-columns: 1fr; }
+      h1{ font-size: 30px; }
+      .content h2{ font-size: 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Место под картинку -->
+  <!-- Место под картинку сверху -->
   <div class="header-image"></div>
 
   <div class="container">
     <h1>Начало работы на Liberty</h1>
 
+    <!-- ОГЛАВЛЕНИЕ (кликабельное) -->
     <div class="toc">
-  <div class="section">
-    <a href="#p1">Начало работы: предварительные действия</a>
+      <div class="section"><a href="#pre-actions">Начало работы: предварительные действия</a></div>
+
+      <div class="section"><a href="#start-material">Начало установки материала в работу</a></div>
+      <div class="subsection"><a href="#device-register">Регистрация устройства в системе Liberty</a></div>
+      <div class="subsection"><a href="#app-setup">Установка приложения и настройка устройств</a></div>
+      <div class="subsection"><a href="#app-update">Обновление приложения Liberty</a></div>
+      <div class="subsection"><a href="#device-add">Добавление устройства</a></div>
+      <div class="subsection"><a href="#profile-add">Добавление профиля</a></div>
+      <div class="subsection"><a href="#requisite-add">Установка реквизита</a></div>
+      <div class="subsection"><a href="#selfcheck">Самопроверка и настройка скорости трафика</a></div>
+
+      <div class="section"><a href="#disputes">Споры</a></div>
+      <div class="section"><a href="#sbp">Особенности работы по СБП</a></div>
+      <div class="section"><a href="#ru-accounts">Особенности работы со счетами по RU-банкам</a></div>
+    </div>
+
+    <hr />
+
+    <!-- КОНТЕНТ (сюда вставляешь тексты разделов) -->
+    <div class="content">
+
+      <h2 id="pre-actions">Начало работы: предварительные действия</h2>
+      <p>Текст раздела вставь сюда.</p>
+      <ol>
+        <li>Пункт 1…</li>
+        <li>Пункт 2…</li>
+        <li>Пункт 3…</li>
+      </ol>
+
+      <h2 id="start-material">Начало установки материала в работу</h2>
+
+      <h3 id="device-register">Регистрация устройства в системе Liberty</h3>
+      <p>Текст подраздела вставь сюда.</p>
+      <ol>
+        <li>Шаг 1…</li>
+        <li>Шаг 2…</li>
+      </ol>
+      <div class="note"><b>Важно:</b> примечание/важный блок — сюда.</div>
+
+      <h3 id="app-setup">Установка приложения и настройка устройств</h3>
+      <p>Текст подраздела вставь сюда.</p>
+      <ol>
+        <li>Шаг 1…</li>
+        <li>Шаг 2…</li>
+      </ol>
+      <div class="warn"><b>❗️Внимание:</b> предупреждение — сюда.</div>
+
+      <!-- МЕСТО ПОД СКРИНШОТЫ -->
+      <div class="screens">
+        <div class="screen">Скриншот #1</div>
+        <div class="screen">Скриншот #2</div>
+        <div class="screen">Скриншот #3</div>
+        <div class="screen">Скриншот #4</div>
+      </div>
+
+      <h3 id="app-update">Обновление приложения Liberty</h3>
+      <p>Текст подраздела вставь сюда.</p>
+
+      <h3 id="device-add">Добавление устройства</h3>
+      <p>Текст подраздела вставь сюда.</p>
+
+      <!-- МЕСТО ПОД СКРИНШОТЫ -->
+      <div class="screens">
+        <div class="screen">Скриншот (устройства) #1</div>
+        <div class="screen">Скриншот (устройства) #2</div>
+      </div>
+
+      <h3 id="profile-add">Добавление профиля</h3>
+      <p>Текст подраздела вставь сюда.</p>
+
+      <h3 id="requisite-add">Установка реквизита</h3>
+      <p>Текст подраздела вставь сюда.</p>
+
+      <h3 id="selfcheck">Самопроверка и настройка скорости трафика</h3>
+      <p>Текст подраздела вставь сюда.</p>
+
+      <h2 id="disputes">Споры</h2>
+      <p>Текст раздела вставь сюда.</p>
+
+      <h2 id="sbp">Особенности работы по СБП</h2>
+      <p>Текст раздела вставь сюда.</p>
+
+      <h2 id="ru-accounts">Особенности работы со счетами по RU-банкам</h2>
+      <p>Текст раздела вставь сюда.</p>
+
+    </div>
   </div>
-
-  <div class="section">
-    <a href="#p2">Начало установки материала в работу</a>
-  </div>
-
-  <div class="subsection"><a href="#p3">Регистрация устройства в системе Liberty</a></div>
-  <div class="subsection"><a href="#p4">Установка приложения и настройка устройств</a></div>
-  <div class="subsection"><a href="#p5">Обновление приложения Liberty</a></div>
-  <div class="subsection"><a href="#p6">Добавление устройства</a></div>
-  <div class="subsection"><a href="#p7">Добавление профиля</a></div>
-  <div class="subsection"><a href="#p8">Установка реквизита</a></div>
-  <div class="subsection"><a href="#p9">Самопроверка и настройка скорости трафика</a></div>
-
-  <div class="section"><a href="#p10">Споры</a></div>
-  <div class="section"><a href="#p11">Особенности работы по СБП</a></div>
-  <div class="section"><a href="#p12">Особенности работы со счетами по RU-банкам</a></div>
-</div>
-
-<hr>
-  </div>
-
-  <div class="container">
-
-  <h2 id="p1">Начало работы: предварительные действия</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p2">Начало установки материала в работу</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p3">Регистрация устройства в системе Liberty</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p4">Установка приложения и настройка устройств</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p5">Обновление приложения Liberty</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p6">Добавление устройства</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p7">Добавление профиля</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p8">Установка реквизита</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p9">Самопроверка и настройка скорости трафика</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p10">Споры</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p11">Особенности работы по СБП</h2>
-  <p>Текст добавим позже.</p>
-
-  <h2 id="p12">Особенности работы со счетами по RU-банкам</h2>
-  <p>Текст добавим позже.</p>
-
-</div>
 
 </body>
 </html>
+
 
