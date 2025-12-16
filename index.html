@@ -23,17 +23,6 @@
       margin:0;
     }
 
-    /* место под картинку */
-    .header-image{
-      width: 100%;
-      height: 420px;                 /* регулирует размер */
-      background-image: url("images/ghost-header.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;      /* 👈 ВАЖНО */
-      background-color: #ffffff;
-    }
-
     .container{
       max-width: 980px;
       margin: 0 auto;
@@ -141,10 +130,6 @@
       .screens{ grid-template-columns: repeat(2, 1fr) }
       h1{ font-size: 30px; }
       .content h2{ font-size: 24px; }
-
-      .header-image{
-        height:220px;
-      }
      }
 
     /* === ФИКС МАРКЕРОВ СПИСКА (ЗАЛИТЫЕ ТОЧКИ) === */
@@ -159,9 +144,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Место под картинку сверху -->
-  <div class="header-image"></div>
 
   <div class="container">
     <h1>Начало работы на Liberty</h1>
