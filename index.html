@@ -26,11 +26,12 @@
     /* место под картинку */
     .header-image{
       width: 100%;
-      height: 420px;              /* регулирует высоту баннера */
+      height: 420px;                 /* регулирует размер */
       background-image: url("images/ghost-header.png");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;     /* 🔥 ВАЖНО: растягивает на всю ширину */
+      background-size: contain;      /* 👈 ВАЖНО */
+      background-color: #ffffff;
     }
 
     .container{
