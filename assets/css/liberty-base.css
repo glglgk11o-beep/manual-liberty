@@ -262,3 +262,22 @@ a:hover{
 .toc a.active{
   color: var(--muted);
 }
+
+/* FIX: оглавление всегда серое + без буллетов (в т.ч. на iPhone) */
+.toc{
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.toc a,
+.toc a:visited{
+  color: var(--muted) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+.toc a:hover{
+  color: var(--text) !important;
+}
+
