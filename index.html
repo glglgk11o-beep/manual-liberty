@@ -10,136 +10,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --text:#1f1f1f;
-      --muted:#6b6b6b;
-      --link:#1f4fd8;
-    }
-
-    body{
-      margin:0;
-      background:#fff;
-      color:var(--text);
-      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    .container{
-      max-width:900px;
-      margin:0 auto;
-      padding:70px 20px 90px;
-    }
-
-    /* ГЛАВНОЕ ПРИВЕТСТВИЕ */
-    .hero-title{
-      font-size:34px;
-      font-weight:700;
-      line-height:1.35;
-      margin-bottom:26px;
-    }
-
-    .hero-text{
-      font-size:16px;
-      line-height:1.7;
-      color:var(--muted);
-      margin-bottom:55px;
-    }
-
-    /* ОГЛАВЛЕНИЕ */
-    .toc-title{
-      font-size:22px;
-      font-weight:600;
-      margin-bottom:24px;
-    }
-
-    .toc{
-      list-style:none;
-      padding:0;
-      margin:0 0 60px 0;
-    }
-
-    .toc li{
-      margin-bottom:18px;
-    }
-
-    .toc a{
-      font-size:18px;
-      font-weight:500;
-      color:var(--text);
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-    }
-
-    .toc a:hover{
-      border-bottom-color:var(--text);
-    }
-
-    /* НИЖНИЙ ТЕКСТ */
-    .note{
-      font-size:15px;
-      color:var(--muted);
-    }
-
-    .note a{
-      color:var(--link);
-      text-decoration:none;
-    }
-
-    .note a:hover{
-      text-decoration:underline;
-    }
-  </style>
+  <!-- Общий стиль для всех страниц -->
+  <link rel="stylesheet" href="./assets/css/liberty-base.css">
 </head>
 
 <body>
-  <main class="container">
+  <div class="container">
 
-    <!-- ПРИВЕТСТВИЕ (ВМЕСТО "ДОКУМЕНТАЦИЯ LIBERTY") -->
-    <div class="hero-title">
-      Приветствуем тебя, пользователь! Поздравляем с началом работы в нашей команде!
-      Перед тем как начать работать, мы познакомим тебя с нашей структурой.
-      Удачи, коллега!
+    <h1>Liberty — документация</h1>
+
+    <div class="content" style="margin-top: 18px;">
+      <p>
+        <b>Приветствуем тебя, пользователь!</b> Поздравляем с началом работы в нашей команде!
+        Перед тем как начать работать, мы познакомим тебя с нашей структурой. Удачи, коллега!
+      </p>
+
+      <h3 style="margin-top: 22px;">Давайте мы поможем Вам с этим:</h3>
+
+      <div class="toc" style="max-width: 100%; margin: 10px 0 0;">
+        <div class="section"><a href="./opisanieliberty/">Описание процессинговой платформы Liberty</a></div>
+        <div class="section"><a href="./polozhenieliberty/">Положение Liberty</a></div>
+        <div class="section"><a href="./startliberty/">Начало работы на Liberty</a></div>
+        <div class="section"><a href="./bazaznaniyliberty/">База знаний</a></div>
+        <div class="section"><a href="./faqliberty/">FAQ</a></div>
+      </div>
+
+      <hr />
+
+      <p style="color: var(--muted); font-size: 15px; margin: 0;">
+        Данные статьи обязательны для ознакомления перед началом работы на сайте
+        <a href="https://liberty.top" target="_blank" rel="noopener noreferrer">liberty.top</a>
+      </p>
     </div>
 
-    <!-- ОГЛАВЛЕНИЕ -->
-    <div class="toc-title">
-      Давайте мы поможем Вам с этим:
-    </div>
-
-    <ul class="toc">
-      <li>
-        <a href="/opisanieliberty/">
-          Описание процессинговой платформы Liberty
-        </a>
-      </li>
-
-      <li>
-        <a href="/polozhenieliberty/">
-          Положение Liberty
-        </a>
-      </li>
-
-      <li>
-        <a href="/startliberty/">
-          Начало работы на Liberty
-        </a>
-      </li>
-
-      <li>
-        <a href="/bazaznaniyliberty/">
-          База знаний
-        </a>
-      </li>
-
-    </ul>
-
-    <!-- ОБЯЗАТЕЛЬНОСТЬ ОЗНАКОМЛЕНИЯ -->
-    <div class="note">
-      Данные статьи обязательны для ознакомления перед началом работы на сайте
-      <a href="https://liberty.top" target="_blank">liberty.top</a>
-    </div>
-
-  </main>
+  </div>
 </body>
 </html>
 
