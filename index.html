@@ -183,17 +183,19 @@
         linear-gradient(180deg, rgba(19,7,30,.30) 0%, rgba(19,7,30,.12) 45%, rgba(19,7,30,.30) 100%);
     }
 
-    /* ===== ЛОГО НА ФОНЕ (ПЛАВАЕТ, НЕ МЕШАЕТ ТЕКСТУ) ===== */
+    /* ===== ЛОГО НА ФОНЕ (СЛЕВА) ===== */
     body::after{
       content:"";
       position: fixed;
       inset: 0;
       z-index: -1;
 
-      background-image: url("images/symbol_gradient.png"); /* <-- путь к твоему лого */
+      background-image: url("images/symbol_gradient.png");
       background-repeat: no-repeat;
-      background-position: 82% 28%;
-      background-size: min(520px, 55vw);
+
+    /* ВОТ ЭТО ГЛАВНОЕ: позиция слева */
+      background-position: left -120px top 50%;
+      background-size: min(560px, 60vw);
 
       opacity: 0.10;
       filter: blur(0px);
@@ -207,6 +209,14 @@
       0%   { transform: translate(0px, 0px) rotate(-2deg) scale(1); }
       50%  { transform: translate(-14px, 10px) rotate(2deg) scale(1.02); }
       100% { transform: translate(0px, 0px) rotate(-2deg) scale(1); }
+    }
+
+    @media (max-width: 900px){
+      body::after{
+        background-position: left -180px top 55%;
+        opacity: 0.07;
+        background-size: min(420px, 80vw);
+      }
     }
 
     .container{
