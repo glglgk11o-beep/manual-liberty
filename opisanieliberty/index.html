@@ -10,72 +10,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ОБЩИЙ СТИЛЬ (как на остальных страницах) -->
+  <!-- Общий стиль -->
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
 
-  <!-- ЛОКАЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ (баннер + мелкие блоки) -->
   <style>
-    /* Верхний баннер (оставляем, он уникальный) */
-    .top-banner{
-      height:84px;
-      background:
-        linear-gradient(180deg, rgba(30,40,55,.45), rgba(30,40,55,.45)),
-        radial-gradient(1200px 220px at 50% -40px, rgba(43,108,176,.35), transparent 60%),
-        linear-gradient(90deg, #1f2937, #334155);
-      position: relative;
-      overflow:hidden;
-    }
-    .top-banner::after{
-      content:"";
-      position:absolute;
-      inset:-40px -60px auto -60px;
-      height:160px;
-      background: radial-gradient(260px 100px at 35% 60%, rgba(255,255,255,.12), transparent 70%);
-      transform: rotate(-3deg);
+    /* Стили только для оглавления на этой странице (серые подчёркнутые + отступы) */
+    .toc-block{
+      max-width: 520px;
+      margin: 0 auto 34px;
     }
 
-    /* Ссылка "на главную" — просто чуть аккуратнее */
-    .home-link{
-      display:inline-block;
-      font-size:14px;
-      color: var(--link);
+    /* "Раздел" (не ссылка) */
+    .toc-heading{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+
+    /* Подразделы — как на скрине: сероватые, подчёркнутые, с отступом */
+    .toc-block .subsection{
+      margin-left: 24px;
+      line-height: 1.9;
+    }
+
+    .toc-block a{
+      color: var(--muted);
       text-decoration: underline;
       text-underline-offset: 3px;
-      margin: 0 0 18px;
+    }
+    .toc-block a:hover{ color: var(--link); }
+
+    /* Чуть разделить оглавление и контент */
+    .divider{
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
     }
 
-    /* Внутренний TOC (для этой страницы) */
-    .toc-wrap{
-      max-width:520px;
-      margin: 0 auto 28px;
-      text-align:left;
-    }
-    .toc-title{
-      font-size:15px;
-      color: var(--muted);
-      margin-bottom:10px;
-    }
-    .toc-local{
-      list-style:none;
-      padding:0;
-      margin:0;
-      border-left:2px solid var(--border);
-    }
-    .toc-local a{
-      display:block;
-      padding:8px 0 8px 14px;
-      text-decoration:none;
-      color: var(--text);
-      font-size:16px;
-      border-left:2px solid transparent;
-      margin-left:-2px;
-    }
-    .toc-local a:hover{
-      color: var(--link);
-      border-left-color: var(--link);
-    }
-
-    /* Карточки/врезки на этой странице */
+    /* Карточки/врезки оставляем, чтобы не ломать твой контент */
     .callout{
       border:1px solid var(--border);
       border-radius:14px;
@@ -85,66 +59,36 @@
       margin:14px 0 18px;
     }
     .callout b{ display:block; margin-bottom:6px; }
-
-    /* Немного выравниваем главный заголовок под общий стиль */
-    .page-title{
-      text-align:center;
-      margin: 10px 0 14px;
-    }
-    .subnote{
-      max-width:820px;
-      margin: 0 auto 22px;
-      color: var(--muted);
-      font-size:16px;
-      text-align:center;
-      line-height: 1.7;
-    }
-
-    /* Чтобы разделительные линии были как везде */
-    .divider{
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 28px 0;
-    }
   </style>
 </head>
 
 <body>
-  <div class="top-banner"></div>
-
   <div class="container">
-    <a class="home-link" href="../">← На главную</a>
 
-    <!-- Заголовок делаем через общий h1, но с тем же текстом -->
-    <h1 class="page-title">Описание процессинговой платформы Liberty</h1>
+    <h1>Описание процессинговой платформы Liberty</h1>
 
-    <div class="subnote">
-      Ниже приведено описание разделов платформы и ключевых возможностей. Используйте “Меню навигации”, чтобы быстро перейти к нужному блоку.
-    </div>
+    <!-- ОГЛАВЛЕНИЕ (как у тебя на рефе) -->
+    <div class="toc-block">
+      <div class="toc-heading">Меню навигации</div>
 
-    <!-- TOC -->
-    <div class="toc-wrap">
-      <div class="toc-title">Меню навигации</div>
-      <ul class="toc-local">
-        <li><a href="#menu">Меню навигации (разделы)</a></li>
-        <li><a href="#home">Главная</a></li>
-        <li><a href="#requisites">Реквизиты</a></li>
-        <li><a href="#deals">Сделки</a></li>
-        <li><a href="#disputes">Споры</a></li>
-        <li><a href="#finance">Финансы</a></li>
-        <li><a href="#stats">Статистика</a></li>
-        <li><a href="#notifications">Уведомления</a></li>
-        <li><a href="#messages">Сообщения</a></li>
-        <li><a href="#settings">Настройки</a></li>
-        <li><a href="#devices">Устройства</a></li>
-      </ul>
+      <div class="subsection"><a href="#home">Главная</a></div>
+      <div class="subsection"><a href="#requisites">Реквизиты</a></div>
+      <div class="subsection"><a href="#deals">Сделки</a></div>
+      <div class="subsection"><a href="#disputes">Споры</a></div>
+      <div class="subsection"><a href="#finance">Финансы</a></div>
+      <div class="subsection"><a href="#stats">Статистика</a></div>
+      <div class="subsection"><a href="#notifications">Уведомления</a></div>
+      <div class="subsection"><a href="#messages">Сообщения</a></div>
+      <div class="subsection"><a href="#settings">Настройки</a></div>
+      <div class="subsection"><a href="#devices">Устройства</a></div>
     </div>
 
     <hr class="divider" />
 
-    <!-- ВЕСЬ КОНТЕНТ — внутри общего .content (как на остальных страницах) -->
+    <!-- КОНТЕНТ -->
     <div class="content">
 
+      <!-- МЕНЮ -->
       <h2 id="menu">Меню навигации</h2>
 
       <p><b>Главная</b> — общая информация по финансам;</p>
@@ -176,6 +120,7 @@
 
       <hr class="divider" />
 
+      <!-- ГЛАВНАЯ -->
       <h2 id="home">Главная</h2>
 
       <p><b>Сделки</b> — количество сделок.</p>
@@ -289,8 +234,8 @@
         <li>Проверить информацию по созданному токену</li>
       </ul>
 
-    </div><!-- /.content -->
-  </div><!-- /.container -->
+    </div>
+  </div>
 </body>
 </html>
 
