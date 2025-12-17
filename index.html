@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Документация Liberty</title>
+  <title>Liberty — документация</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Fonts -->
@@ -12,18 +12,14 @@
 
   <style>
     :root{
-      --text:#222;
-      --muted:#666;
-      --border:#e9e9e9;
-      --bg:#fff;
-      --link:#2b6cb0;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --link:#1f4fd8;
     }
-
-    html { scroll-behavior: smooth; }
 
     body{
       margin:0;
-      background:var(--bg);
+      background:#fff;
       color:var(--text);
       font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
@@ -31,55 +27,54 @@
     .container{
       max-width:900px;
       margin:0 auto;
-      padding:60px 20px 80px;
+      padding:70px 20px 90px;
     }
 
-    h1{
+    /* ГЛАВНОЕ ПРИВЕТСТВИЕ */
+    .hero-title{
       font-size:34px;
       font-weight:700;
-      margin-bottom:20px;
+      line-height:1.35;
+      margin-bottom:26px;
     }
 
-    .welcome{
-      font-size:18px;
-      font-weight:600;
-      margin-bottom:14px;
-    }
-
-    .welcome-text{
+    .hero-text{
       font-size:16px;
+      line-height:1.7;
       color:var(--muted);
-      line-height:1.6;
-      margin-bottom:40px;
+      margin-bottom:55px;
     }
 
-    .section-title{
-      font-size:18px;
+    /* ОГЛАВЛЕНИЕ */
+    .toc-title{
+      font-size:22px;
       font-weight:600;
-      margin-bottom:16px;
+      margin-bottom:24px;
     }
 
     .toc{
       list-style:none;
       padding:0;
-      margin:0 0 40px 0;
+      margin:0 0 60px 0;
     }
 
     .toc li{
-      margin-bottom:14px;
+      margin-bottom:18px;
     }
 
     .toc a{
-      font-size:16px;
+      font-size:18px;
+      font-weight:500;
       color:var(--text);
       text-decoration:none;
       border-bottom:1px solid transparent;
     }
 
     .toc a:hover{
-      border-color:var(--text);
+      border-bottom-color:var(--text);
     }
 
+    /* НИЖНИЙ ТЕКСТ */
     .note{
       font-size:15px;
       color:var(--muted);
@@ -99,19 +94,15 @@
 <body>
   <main class="container">
 
-    <h1>Документация Liberty</h1>
-
-    <div class="welcome">
-      Приветствуем тебя, пользователь!
-    </div>
-
-    <div class="welcome-text">
-      Поздравляем с началом работы в нашей команде!  
-      Перед тем как начать работать, мы познакомим тебя с нашей структурой.<br>
+    <!-- ПРИВЕТСТВИЕ (ВМЕСТО "ДОКУМЕНТАЦИЯ LIBERTY") -->
+    <div class="hero-title">
+      Приветствуем тебя, пользователь! Поздравляем с началом работы в нашей команде!
+      Перед тем как начать работать, мы познакомим тебя с нашей структурой.
       Удачи, коллега!
     </div>
 
-    <div class="section-title">
+    <!-- ОГЛАВЛЕНИЕ -->
+    <div class="toc-title">
       Давайте мы поможем Вам с этим:
     </div>
 
@@ -147,6 +138,7 @@
       </li>
     </ul>
 
+    <!-- ОБЯЗАТЕЛЬНОСТЬ ОЗНАКОМЛЕНИЯ -->
     <div class="note">
       Данные статьи обязательны для ознакомления перед началом работы на сайте
       <a href="https://liberty.top" target="_blank">liberty.top</a>
@@ -155,4 +147,5 @@
   </main>
 </body>
 </html>
+
 
