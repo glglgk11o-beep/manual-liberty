@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Начало работы на Liberty</title>
+  <title>Документация Liberty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Fonts -->
@@ -22,384 +22,137 @@
     html { scroll-behavior: smooth; }
 
     body{
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
       margin:0;
-      letter-spacing: -0.01em;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     .container{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
+      max-width:900px;
+      margin:0 auto;
+      padding:60px 20px 80px;
     }
 
     h1{
-      text-align:center;
-      font-size:36px;
+      font-size:34px;
       font-weight:700;
-      margin: 0 0 28px;
-      letter-spacing: -0.03em;
+      margin-bottom:20px;
     }
 
-    /* Оглавление */
-    .toc{
+    .welcome{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:14px;
+    }
+
+    .welcome-text{
       font-size:16px;
-      line-height:1.9;
-      max-width: 700px;
-      margin: 0 auto 40px;
+      color:var(--muted);
+      line-height:1.6;
+      margin-bottom:40px;
+    }
+
+    .section-title{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:16px;
+    }
+
+    .toc{
+      list-style:none;
+      padding:0;
+      margin:0 0 40px 0;
+    }
+
+    .toc li{
+      margin-bottom:14px;
     }
 
     .toc a{
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .toc a:hover{ color: var(--link); }
-
-    .toc .section{ margin-top: 14px; }
-    .toc .subsection{ margin-left: 24px; }
-
-    hr{
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 36px 0;
+      font-size:16px;
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
     }
 
-    /* Контент */
-    .content{
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.75;
-
-      background: rgba(255,255,255,0.18);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      padding: 28px;
-      border-radius: 14px;
+    .toc a:hover{
+      border-color:var(--text);
     }
-
-    .content h2{
-      font-size: 28px;
-      font-weight: 600;
-      margin: 48px 0 14px;
-      letter-spacing: -0.02em;
-    }
-
-    .content h3{
-      font-size: 20px;
-      font-weight: 600;
-      margin: 28px 0 10px;
-      letter-spacing: -0.015em;
-    }
-
-    .content p{ margin: 10px 0; }
-    .content ol{ margin: 10px 0 10px 22px; }
-    .content ul{ margin: 10px 0 10px 22px; }
 
     .note{
-      border-left: 4px solid #d0d0d0;
-      padding: 10px 12px;
-      background: #fafafa;
-      margin: 14px 0;
+      font-size:15px;
+      color:var(--muted);
     }
 
-    .warn{
-      border-left: 4px solid #ff4d4f;
-      padding: 10px 12px;
-      background: #fff7f7;
-      margin: 14px 0;
+    .note a{
+      color:var(--link);
+      text-decoration:none;
     }
 
-    /* Место под скриншоты */
-    .screens{
-      margin: 14px 0 18px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+    .note a:hover{
+      text-decoration:underline;
     }
-    .screen{
-      border: 1px dashed #cfcfcf;
-      border-radius: 10px;
-      height: 220px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#888;
-      font-size: 14px;
-      background:#fcfcfc;
-    }
-
-    .real-screen{
-      width:100%;
-      max-height:420px;
-      object-fit: contain;
-      border-radius:12px;
-      border:1px solid #e0e0e0;
-      background:#fff;
-    }
-
-    @media (max-width: 720px){
-      .screens{ grid-template-columns: repeat(2, 1fr) }
-      h1{ font-size: 30px; }
-      .content h2{ font-size: 24px; }
-     }
-
-    /* === ФИКС МАРКЕРОВ СПИСКА (ЗАЛИТЫЕ ТОЧКИ) === */
-    .content ul {
-      list-style-type: disc;
-    }
-
-    .content ul ul {
-      list-style-type: disc;
-    }
-
-    @media (max-width: 900px){
-      body::after{
-        background-position: left -180px top 55%;
-        opacity: 0.07;
-        background-size: min(420px, 80vw);
-      }
-    }
-
-    .container{
-      background: transparent;
-      border-radius: 0;
-      border: none;
-      box-shadow: none;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    
-    /* ===== ВЕС ТЕКСТА ===== */
-    .content p,
-    .content li{
-      font-weight: 400;
-    }
-
-    .content strong,
-    .content b{
-      font-weight: 600;
-    }
-
-      /* ===== ЧИСТЫЙ БЕЛЫЙ ФОН ===== */
-     body{
-      background: #ffffff;
-      color: var(--text);
-      position: static;
-      overflow-x: hidden;
-    }
-    
   </style>
 </head>
+
 <body>
+  <main class="container">
 
-  <div class="container">
-    <h1>Начало работы на Liberty</h1>
+    <h1>Документация Liberty</h1>
 
-    <!-- ОГЛАВЛЕНИЕ (кликабельное) -->
-    <div class="toc">
-      <div class="section"><a href="#pre-actions">Начало работы: предварительные действия</a></div>
-
-      <div class="section"><a href="#start-material">Начало установки материала в работу</a></div>
-      <div class="subsection"><a href="#device-register">Регистрация устройства в системе Liberty</a></div>
-      <div class="subsection"><a href="#app-setup">Установка приложения и настройка устройств</a></div>
-      <div class="subsection"><a href="#app-update">Обновление приложения Liberty</a></div>
-      <div class="subsection"><a href="#device-add">Добавление устройства</a></div>
-      <div class="subsection"><a href="#requisite-add">Установка реквизита</a></div>
-      <div class="subsection"><a href="#selfcheck">Самопроверка</a></div>
-
-      <div class="section"><a href="#disputes">Споры</a></div>
+    <div class="welcome">
+      Приветствуем тебя, пользователь!
     </div>
 
-    <hr />
+    <div class="welcome-text">
+      Поздравляем с началом работы в нашей команде!  
+      Перед тем как начать работать, мы познакомим тебя с нашей структурой.<br>
+      Удачи, коллега!
+    </div>
 
-    <!-- КОНТЕНТ -->
-    <div class="content">
+    <div class="section-title">
+      Давайте мы поможем Вам с этим:
+    </div>
 
-      <h2 id="pre-actions">Начало работы: предварительные действия</h2>
-      <ol>
-        <li>Прочитать инструкцию, положение и описание платформы;</li>
-        <li>Написать в личные сообщения менеджеру Liberty (аккаунту, который создал беседу с вами) и запросить ссылку на токен.</li>
-        <li>Вам пришлют ссылку, в которой вам нужно будет создать свои данные для входа.</li>
-        <li>Подключить Telegram-бота уведомлений можно в разделе "Уведомления"</li>
-      </ol>
+    <ul class="toc">
+      <li>
+        <a href="#">
+          Описание процессинговой платформы Liberty
+        </a>
+      </li>
 
-      <h2 id="start-material">Начало установки материала в работу</h2>
+      <li>
+        <a href="#">
+          Положение Liberty
+        </a>
+      </li>
 
-      <h3 id="device-register">Регистрация устройства в системе Liberty</h3>
-      <ol>
-        <li>Перейдите в личный кабинет в раздел «Устройства»;</li>
-        <li>Сразу же увидите пункт "Скачайте и установите APK", в конце будет кликабельная кнопка "Скачать". Это приложение автоматики;</li>
-        <li>В этом разделе в графе "Создать новый токен для устройства" даете имя своему устройству. Назовите устройство на собственное усмотрение. Это может быть порядковый номер телефона в вашей системе, название модели или фамилии владельцев карт, который подвязаны к этому телефону; ;</li>
-        <li>После того как вы назвали свое устройство нажимайте "Создать токен"</li>
-        <li>Внизу вы увидите, что ваше устройство создано, ему присвоен токен, устройство будет пока что не подключено</li>
-      </ol>
-      <div class="note"><b>Важно:</b> если в процессе настройки возникает ошибка или вы не уверены в действии — остановитесь и обратитесь к менеджеру/поддержке.</div>
+      <li>
+        <a href="/startliberty/">
+          Начало работы на Liberty
+        </a>
+      </li>
 
-      <h3 id="app-setup">Установка приложения и настройка устройств</h3>
-      <ol>
-        <li>Скачайте актуальную версию приложения из личного кабинета, которая находится в разделе "Устройства". При переходе в этот раздел вы увидите пункт "Скачайте и установите APK", в конце будет кликабельная кнопка "Скачать". Это приложение автоматики; ;</li>
-        <li>Установите приложение и предоставьте необходимые разрешения на устройстве;</li>
-        <li>Следуя инструкциям на скриншотах ниже, предоставьте приложению все необходимые разрешения.</li>
-      </ol>
+      <li>
+        <a href="#">
+          База знаний
+        </a>
+      </li>
 
-      <div class="screens">
-        <img src="images/111.jpg" alt="Шаг 1" class="real-screen">
-        <img src="images/112.jpg" alt="Шаг 2" class="real-screen">
-        <img src="images/113.jpg" alt="Шаг 3" class="real-screen">
-        <img src="images/114.jpg" alt="Шаг 4" class="real-screen">
-        <img src="images/115.jpg" alt="Шаг 5" class="real-screen">
-        <img src="images/116.jpg" alt="Шаг 6" class="real-screen">
-      </div>
-
-      <!-- ВАЖНО: якорь app-update стоит на реальном блоке обновления -->
-      <h3 id="app-update">Обновление приложения Liberty</h3>
-      <p>
-        После получения файла с обновлением ПО, вам нужно будет отключить в личном кабинете
-        все устройства и подождать <b>30 минут</b>, чтобы все ордера закрылись.
-        Как только пройдёт время, вы можете скачать файл и обновить приложение.
-      </p>
-
-      <!-- ВАЖНО: якорь device-add стоит на реальном блоке добавления устройства -->
-      <h3 id="device-add">Добавление устройства</h3>
-      <p>
-        В разделе
-        <a href="https://liberty.top/trader/devices" target="_blank" rel="noopener noreferrer">Устройства</a>
-        вы можете контролировать работу своих девайсов.
-      </p>
-
-      <p>В карточке каждого устройства вы можете видеть информацию о статусе подключения устройства.</p>
-
-      <!-- ВАЖНО: якорь requisite-add стоит на реальном блоке -->
-      <h3 id="requisite-add">Установка реквизита</h3>
-
-<p>
-  <b>Реквизит –</b> номер карты, счета, адрес кошелька и другие виды данных, на которые будут совершены переводы от пользователей.
-</p>
-
-<ol>
-  <li>
-    В личном кабинете в разделе
-    <a href="https://liberty.top/payment-details" target="_blank" rel="noopener noreferrer">Реквизиты</a>
-    нажмите на “Создать реквизиты” в правом верхнем углу.
-  </li>
-
-  <li>
-    Перед вами появиться окно создания реквизитов, где вы:
-    <ul>
-      <li>в графе "Валюта" выбираете валюту, по которой вы будете работать;</li>
-      <li>"Платежный метод" — банк, по которому ваш реквизит будет работать;</li>
-      <li>"Устройство" — устройство, на котором вы будете работать (подвязываете);</li>
-      <li>"Никнейм реквизитов" — пишите какое хотите, чтобы не запутаться и не забыть его;</li>
-      <li>"Номер телефона", "Карта", "Номер счета" — в зависимости от типа реквизита вписать его;</li>
-      <li>"Инициалы (имя получателя)" — кто будет выходить при переводе на данный реквизит;</li>
-      <li>"Лимит на объем операций в сутки (RUB)" — максимальная сумма, которую может принять реквизит;</li>
-      <li>"Максимальное количество активных сделок" — сколько максимум откроется сделок (пока не уйдут в “Отмененные” или “Завершенные”, новые не появятся);</li>
-      <li>"Минимальная сумма сделки" — минимальная сумма чека;</li>
-      <li>"Максимальная сумма сделки" — максимальная сумма чека;</li>
-      <li>"Интервал между сделками" — время между сделками (в минутах);</li>
+      <li>
+        <a href="#">
+          FAQ
+        </a>
+      </li>
     </ul>
-  </li>
 
-  <li>
-    Нажимаете “Сохранить” и у вас появляется ваш реквизит, в котором указана вся информация, которую вы вводили, когда его создавали.
-  </li>
-
-  <li>
-    В конце каждого реквизита есть ползунок “Статус”, если вы будете работать по этому реквизиту — сделайте его активным, если нет — отключите.
-  </li>
-
-  <li>
-    Также в конце каждого реквизита есть “троеточие”: нажав на него, вы можете редактировать реквизит.
-  </li>
-</ol>
-
-      <!-- ВАЖНО: якорь selfcheck стоит на реальном блоке -->
-      <h3 id="selfcheck">Самопроверка</h3>
-
-      <p>
-        После всех настроек вы должны пройти самопроверку реквизита:
-      </p>
-
-      <ul>
-        <li>Проверьте, есть ли вообще пополнения в истории банка. Если нет, то либо никто не перевёл ещё, либо вы ввели неправильно данные;</li>
-        <li>Реквизиты, которые указаны в SMS, есть по факту в токене;</li>
-        <li>Приходят пуш/SMS в наше приложение;</li>
-        <li>Если не поступают, то проверьте, включены ли уведомления в банке;</li>
-        <li>Как только у вас начинают лететь споры, то лучше выключить реквизит, всё проверить и пересмотреть подключение реквизита;</li>
-        <li>Если после прохождения внутренней проверки по инструкции вы все равно не можете найти проблему, то пишите сразу в беседу.</li>
-      </ul>
-
-      <p><b>Памятка включения профиля в работу</b></p>
-      <ol>
-        <li>Интернет стабильный;</li>
-        <li>Приложение устройства обновлено до последней версии;</li>
-        <li>Выданы все доступы в телефоне для приложения и включены все нужные банки;</li>
-        <li>На сайте устройство в доступе;</li>
-        <li>Реквизит включён;</li>
-        <li>Трастовый баланс пополнен;</li>
-        <li>Оператор трезвый и видит, где запятая в вашем трастовом балансе;</li>
-        <li>При включении профиля все SMS совпадают с историей в банке и закрывают сделки;</li>
-        <li>В боте не приходило сообщение о остановке токена.</li>
-      </ol>
-
-      <!-- =========================
-           ВСТАВЛЕНО: СПОРЫ
-           ========================= -->
-      <h2 id="disputes">Споры</h2>
-
-      <p>
-        На сайте Liberty есть раздел
-        <a href="https://liberty.top/disputes" target="_blank" rel="noopener noreferrer">«Споры»</a>.
-        В него попадают заявки от плательщиков, к которым не пришли деньги, но они потенциально оплатили платёж.
-        Такие заявки ещё называют диспут/потерянный платеж, спорная ситуация, «потеряшка».
-      </p>
-
-      <p>
-        Также такие заявки попадают ещё и к вам в бот, который вы должны подключить с помощью нашей команды в чате работы.
-        (Споры нужно проверять как в боте, так и на сайте в разделе “Споры”.)
-      </p>
-
-      <p>
-        Спор может быть одобрен спустя месяц, если есть Push/SMS о фактическом зачислении средств и данное уведомление о пополнении не имеет привязки к сделке.
-      </p>
-
-      <p>Ошибочно одобренный и автозакрытые по времени споры не возвращаются.</p>
-
-      <p>
-        В системе нет понятия неверной суммы в споре. Есть пункт <b>«Сумма по факту»</b> – это количество средств, которое пришло в SMS.
-        Пользователи иногда переводят другую сумму, нежели указанную в ордере. Но у нас есть возможность её изменить.
-        Открываете спор, вводите сумму, которая пришла в SMS <b>по факту</b> и зачисляете.
-        С трастового баланса спишется та сумма, которую вы указали.
-      </p>
-
-      <p>
-        При работе «ферм» или при наличию у трейдера нескольких личных кабинетов разных банков споры «Перевод не в тот банк»
-        <b>будут зачислены в статус «Одобрено»,</b> если перевод клиент совершил на тот банк, который есть в системе по этому получателю.
-      </p>
-
-      <h3>Максимально подробная инструкция проверки споров</h3>
-      <ol>
-        <li>Откройте чек и <b>запомните</b> дату, время, сумму и реквизит платежа;</li>
-        <li>Убедитесь, что реквизит поступления <b>ваш</b>;</li>
-        <li><b>Сравните</b> <b>дату</b> и <b>время</b> платежа с <b>моментом</b> <b>создания</b> сделки (если время оплаты раньше времени создания сделки, то это повод настрожиться);</li>
-        <li><b>Найдите</b> поступление в банке;</li>
-        <li><b>Найдите</b> в системе <b>в разделе «Сообщения»</b> это сообщение;</li>
-        <li>Убедитесь, что пришедший Push/SMS <b>не принадлежит</b> уже какой-либо сделке;</li>
-        <li><b>Одобрите</b> платёж, если всё совпадает и нет пересечений с другим платежом.</li>
-      </ol>
-
-      <div class="warn">
-        <b>Не</b> подтверждайте спор, по которому <b>не уверены</b> в моменте факта зачисления платежа.
-      </div>
-
+    <div class="note">
+      Данные статьи обязательны для ознакомления перед началом работы на сайте
+      <a href="https://liberty.top" target="_blank">liberty.top</a>
     </div>
-  </div>
 
+  </main>
 </body>
 </html>
-
 
