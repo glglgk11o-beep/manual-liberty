@@ -149,3 +149,96 @@ h1{
   h1{ font-size: 30px; }
   .content h2{ font-size: 24px; }
 }
+
+/* ===============================
+   LIBERTY LIGHT BRAND (WHITE)
+   вставить В КОНЕЦ ФАЙЛА
+   =============================== */
+
+/* 1) Фирменные цвета Liberty */
+:root{
+  --liberty-blue: #6C7BFF;
+  --liberty-violet: #DB63DB;
+  --liberty-soft-bg: #F7F8FF;
+  --liberty-border: #E6E8FF;
+
+  /* мягкая замена существующих */
+  --link: var(--liberty-blue);
+  --border: var(--liberty-border);
+}
+
+/* 2) Общий фон — ОСТАЁТСЯ БЕЛЫМ */
+body{
+  background: #ffffff;
+  color: #222;
+}
+
+/* 3) Заголовок — чуть более брендовый */
+h1{
+  color: #1f1f1f;
+  position: relative;
+}
+
+h1::after{
+  content:"";
+  display:block;
+  width: 64px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--liberty-blue),
+    var(--liberty-violet)
+  );
+}
+
+/* 4) Контент-блок — светлая бренд-карточка */
+.content{
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    var(--liberty-soft-bg)
+  );
+  border: 1px solid var(--liberty-border);
+  border-radius: 16px;
+}
+
+/* 5) Ссылки — фирменный акцент */
+a{
+  color: var(--liberty-blue);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(108,123,255,.35);
+}
+
+a:hover{
+  color: var(--liberty-violet);
+  border-bottom-color: rgba(219,99,219,.6);
+}
+
+/* 6) Оглавление — аккуратнее */
+.toc a{
+  color: #444;
+}
+
+.toc a:hover{
+  color: var(--liberty-blue);
+}
+
+/* 7) Note / Warn — светло и чисто */
+.note{
+  background: #f8f9ff;
+  border-left: 4px solid var(--liberty-blue);
+}
+
+.warn{
+  background: #fff5f5;
+  border-left: 4px solid #ff4d4f;
+}
+
+/* 8) Скриншоты — мягкая рамка */
+.real-screen{
+  border: 1px solid var(--liberty-border);
+  background: #fff;
+}
+
