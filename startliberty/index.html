@@ -43,42 +43,23 @@
       letter-spacing: -0.03em;
     }
 
-    /* === ОГЛАВЛЕНИЕ (как в polozhenieliberty/рефе) === */
+    /* Оглавление */
     .toc{
-      display: inline-block;
-      text-align: left;
-      padding: 0;
-      margin: 8px auto 26px;
-      list-style: none;
-
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .toc li{
-      margin: 10px 0;
-      font-weight: 500;
+      font-size:16px;
+      line-height:1.9;
+      max-width: 700px;
+      margin: 0 auto 40px;
     }
 
     .toc a{
-      color: #6b6b6b;
+      color: var(--muted);
       text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
-    .toc a:hover{ color: #2b6cb0; }
+    .toc a:hover{ color: var(--link); }
 
-    /* раздел */
-    .toc .section{
-      margin-top: 0;
-      font-weight: 600;
-    }
-
-    /* подразделы */
-    .toc .subsection{
-      margin-left: 22px;
-      font-weight: 500;
-    }
+    .toc .section{ margin-top: 14px; }
+    .toc .subsection{ margin-left: 24px; }
 
     hr{
       border: none;
