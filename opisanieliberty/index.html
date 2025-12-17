@@ -21,12 +21,17 @@
     }
 
     /* "Раздел" (не ссылка) */
-    .toc-heading{
+    .toc-heading a{
       color: var(--muted);
       font-size: 16px;
       line-height: 1.9;
-      margin: 0 0 6px 0;
       font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .toc-heading a:hover{
+      color: var(--link);
     }
 
     /* Подразделы — как на скрине: сероватые, подчёркнутые, с отступом */
@@ -69,7 +74,9 @@
 
     <!-- ОГЛАВЛЕНИЕ (как у тебя на рефе) -->
     <div class="toc-block">
-      <div class="toc-heading">Меню навигации</div>
+      <div class="toc-heading">
+        <a href="#menu">Меню навигации</a>
+      </div>
 
       <div class="subsection"><a href="#home">Главная</a></div>
       <div class="subsection"><a href="#requisites">Реквизиты</a></div>
