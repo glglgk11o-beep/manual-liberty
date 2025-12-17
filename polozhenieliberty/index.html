@@ -28,6 +28,7 @@
       color:var(--text);
       background:var(--bg);
       line-height:1.6;
+      letter-spacing: -0.01em; /* как в startliberty */
     }
 
     /* как в рефе: центрированный "хедер" */
@@ -39,47 +40,42 @@
     }
 
     h1{
-      font-size: 54px;
-      line-height: 1.08;
-      margin: 0 0 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      text-align:center;
+      font-size:36px;
+      font-weight:700;
+      margin: 0 0 28px;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
     }
 
     /* === ОГЛАВЛЕНИЕ (как в рефе) === */
-    .toc{
-      display: inline-block;
-      text-align: left;
-      padding: 0;
-      margin: 8px 0 26px 0;
-      list-style: none;
-    }
+    /* Оглавление — как в startliberty */
+.toc{
+  font-size:16px;
+  line-height:1.9;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
 
-    .toc li{
-      margin: 10px 0;
-      font-size: 18px;
-      font-weight: 500;
-    }
+.toc li{
+  margin: 10px 0;
+  font-size: 16px;      /* чтобы точно не прыгало */
+  font-weight: 500;
+}
 
-    .toc a{
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
-    }
-    .toc a:hover{ color: var(--linkHover); }
+.toc a{
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.toc a:hover{ color: var(--linkHover); }
 
-    /* "Что такое Liberty" — раздел (чуть жирнее и без отступа) */
-    .toc .toc-section{
-      font-weight: 600;
-      margin-top: 0;
-    }
-
-    /* остальные — подразделы (чуть левее/правее: делаем отступ вправо, как в рефе) */
-    .toc .toc-sub{
-      margin-left: 22px;
-      font-weight: 500;
-    }
+/* раздел / подраздел — как у тебя в startliberty */
+.toc .toc-section{ margin-top: 14px; }
+.toc .toc-sub{ margin-left: 24px; }
 
     .divider{
       height: 1px;
