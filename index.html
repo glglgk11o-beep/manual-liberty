@@ -183,6 +183,32 @@
         linear-gradient(180deg, rgba(19,7,30,.30) 0%, rgba(19,7,30,.12) 45%, rgba(19,7,30,.30) 100%);
     }
 
+    /* ===== ЛОГО НА ФОНЕ (ПЛАВАЕТ, НЕ МЕШАЕТ ТЕКСТУ) ===== */
+    body::after{
+      content:"";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+
+      background-image: url("images/symbol_gradient.png"); /* <-- путь к твоему лого */
+      background-repeat: no-repeat;
+      background-position: 82% 28%;
+      background-size: min(520px, 55vw);
+
+      opacity: 0.10;
+      filter: blur(0px);
+      transform: translate3d(0,0,0);
+
+      animation: floatLogo 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatLogo{
+      0%   { transform: translate(0px, 0px) rotate(-2deg) scale(1); }
+      50%  { transform: translate(-14px, 10px) rotate(2deg) scale(1.02); }
+      100% { transform: translate(0px, 0px) rotate(-2deg) scale(1); }
+    }
+
     .container{
       background: transparent;
       border-radius: 0;
