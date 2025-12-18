@@ -74,6 +74,30 @@
         margin:14px 0 18px;
       }
       .callout b{ display:block; margin-bottom:6px; }
+
+   /* ===== FIX: оглавление как на рефе (НЕ по центру) ===== */
+.toc-block{
+  text-align: left !important;
+}
+
+.toc,
+.toc li{
+  text-align: left !important;
+}
+
+.toc a{
+  display: inline-block; /* чтобы underline был только под текстом */
+}
+
+   /* ===== УБРАТЬ фиолетовые линии под заголовками ===== */
+h1::after,
+h2::after,
+h3::after,
+.section-title::after,
+.title::after{
+  display: none !important;
+  content: none !important;
+}
     </style>
 </head>
 
