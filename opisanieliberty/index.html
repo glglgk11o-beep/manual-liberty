@@ -15,12 +15,47 @@
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
 
   <style>
-    /* Делаем оглавление точно как на странице "Положение Liberty" */
+    /* ===== ВЕРХНЕЕ ВИДЕО (hero, обрезанное) ===== */
+    .video-hero {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== НИЖНЕЕ ВИДЕО (анимация, компактная) ===== */
+    .video-full {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-full .video-box {
+      width: min(820px, 100%);
+    }
+
+    .video-full video {
+      width: 100%;
+      height: 200px;          /* в 2 раза меньше по высоте */
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      background: #000;
+    }
+
+    /* ===== ОГЛАВЛЕНИЕ (как в "Положение Liberty") ===== */
     .toc { max-width: 100% !important; margin: 10px 0 0 !important; }
     .toc, .toc .section, .toc .subsection { text-align: left !important; }
 
-    /* ВАЖНО: НЕ трогаем h1::after — фиолетовая линия под H1 должна быть */
-    /* Если нужно убрать линии под подзаголовками внутри контента — оставляем только для h2/h3 */
+    /* НЕ трогаем линию под H1 */
     h2::after,
     h3::after,
     .section-title::after,
@@ -32,17 +67,23 @@
 </head>
 
 <body>
+
+  <!-- ===== ВЕРХНЕЕ ВИДЕО ===== -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline>
+      <source src="../video/Liberty.mp4" type="video/mp4">
+    </video>
+  </section>
+
   <div class="container">
 
     <h1>Описание процессинговой платформы Liberty</h1>
 
-    <!-- ВАЖНО: как в "Положение Liberty" -->
     <div class="content" style="margin-top: 18px;">
 
-      <!-- ОГЛАВЛЕНИЕ (как на скрине 2) -->
-      <div class="toc" style="max-width: 100%; margin: 10px 0 0;">
+      <!-- ОГЛАВЛЕНИЕ -->
+      <div class="toc">
         <div class="section"><a href="#menu">Меню навигации</a></div>
-
         <div class="subsection"><a href="#home">Главная</a></div>
         <div class="subsection"><a href="#requisites">Реквизиты</a></div>
         <div class="subsection"><a href="#deals">Сделки</a></div>
@@ -198,7 +239,17 @@
         <li>Проверить информацию по созданному токену</li>
       </ul>
 
+        <!-- ===== НИЖНЕЕ ВИДЕО (анимация) ===== -->
+      <div class="video-full">
+        <div class="video-box">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="../video/Liberty.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
     </div>
   </div>
+
 </body>
 </html>
