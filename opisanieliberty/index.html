@@ -14,50 +14,75 @@
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
 
   <style>
-    /* Стили только для оглавления на этой странице (серые подчёркнутые + отступы) */
-    .toc-block{
-      max-width: 520px;
-      margin: 0 auto 34px;
+    /* ===============================
+       ОГЛАВЛЕНИЕ: слева + без фиолетовых линий
+       =============================== */
+
+    /* ВАЖНО: убираем auto-centering блока (margin: 0 auto) и max-width,
+       чтобы оглавление стало по левому краю контентной колонки */
+    .container .toc-block{
+      max-width: none !important;
+      margin: 0 0 34px !important;
+      padding: 0 !important;
+      text-align: left !important;
     }
 
-    /* ===== ОГЛАВЛЕНИЕ: иерархия как на рефе ===== */
-    .toc{
+    .container .toc{
       list-style: none;
       padding: 0;
       margin: 0;
+      text-align: left !important;
     }
 
-    .toc li{
+    .container .toc li{
       margin: 6px 0;
       line-height: 1.9;
+      text-align: left !important;
     }
 
-    .toc a{
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    /* Ссылки оглавления: принудительно серые и подчёркнутые (НЕ border/box-shadow) */
+    .container .toc a,
+    .container .toc a:visited,
+    .container .toc a:hover,
+    .container .toc a:active,
+    .container .toc a:focus{
+      color: var(--muted) !important;
+      text-decoration: underline !important;
+      text-underline-offset: 3px !important;
+      text-decoration-color: currentColor !important;
+
+      /* убираем "фиолетовые линии" из базового CSS */
+      border: 0 !important;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+      background-image: none !important;
+      background: transparent !important;
+      outline: none !important;
     }
 
-    .toc a:hover{
-      color: var(--link);
+    /* Если база рисует линии через псевдо-элементы на ссылках */
+    .container .toc a::before,
+    .container .toc a::after{
+      content: none !important;
+      display: none !important;
     }
 
     /* Уровни */
-    .toc-h2 a{
+    .container .toc-h2 a{
       padding-left: 0;
       font-size: 16px;
       font-weight: 500;
-      display: inline-block;
+      display: inline;
     }
 
-    .toc-h3 a{
+    .container .toc-h3 a{
       padding-left: 24px;
       font-size: 16px;
       font-weight: 400;
-      display: inline-block;
+      display: inline;
     }
 
-    /* Чуть разделить оглавление и контент */
+    /* Разделитель */
     .divider{
       border: none;
       border-top: 1px solid var(--border);
@@ -75,12 +100,9 @@
     }
     .callout b{ display:block; margin-bottom:6px; }
 
-    /* ===== FIX: оглавление как на рефе (НЕ по центру) ===== */
-    .toc-block{ text-align: left !important; }
-    .toc, .toc li{ text-align: left !important; }
-    .toc a{ display: inline-block; }
-
-    /* ===== УБРАТЬ фиолетовые линии под заголовками (максимально надежно) ===== */
+    /* ===============================
+       УБРАТЬ линии под заголовками (если они реально там были)
+       =============================== */
     h1::after,
     h2::after,
     h3::after,
@@ -96,19 +118,12 @@
       height: 0 !important;
     }
 
-    /* Если линии сделаны не через ::after, а через border-bottom/box-shadow */
     h1, h2, h3,
     .content h1, .content h2, .content h3,
     .section-title, .title{
       border-bottom: none !important;
       box-shadow: none !important;
       background-image: none !important;
-    }
-
-    /* На случай, если "полоска" — это <hr> со стилем из базы */
-    hr,
-    .content hr{
-      box-shadow: none !important;
     }
   </style>
 </head>
@@ -118,7 +133,7 @@
 
     <h1>Описание процессинговой платформы Liberty</h1>
 
-    <!-- ОГЛАВЛЕНИЕ (как у тебя на рефе) -->
+    <!-- ОГЛАВЛЕНИЕ -->
     <div class="toc-block">
       <ul class="toc">
         <li class="toc-h2"><a href="#menu">Меню навигации</a></li>
