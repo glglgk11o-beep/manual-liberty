@@ -44,7 +44,8 @@
 
     .video-full video {
       width: 100%;
-      height: auto;
+      height: 200px;          /* ← В 2 раза меньше по высоте */
+      object-fit: cover;     /* аккуратно обрезает по вертикали */
       border-radius: 14px;
       display: block;
       background: #000;
