@@ -13,9 +13,56 @@
 
   <!-- ГЛАВНОЕ: общий стиль -->
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
+
+  <style>
+    /* ===== ВЕРХНЕЕ ВИДЕО (hero, обрезанное) ===== */
+    .video-hero {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== НИЖНЕЕ ВИДЕО (анимация, компактная) ===== */
+    .video-full {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-full .video-box {
+      width: min(820px, 100%);
+    }
+
+    .video-full video {
+      width: 100%;
+      height: 200px;      /* в 2 раза меньше по высоте */
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      background: #000;
+      outline: none;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- ===== ВЕРХНЕЕ ВИДЕО ===== -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline>
+      <source src="../video/Liberty.mp4" type="video/mp4">
+    </video>
+  </section>
+
   <div class="container">
 
     <h1>Положение Liberty</h1>
@@ -152,7 +199,19 @@
 
       <p>Лимиты выводов не изменяются. Вывод меньше установленного лимита возможен только при окончании работы токена. В этом случае все средства необходимо перевести на трастовый баланс и запросить вывод в рабочем чате, указав кошелек USDT TRC20.</p>
 
-    </section>
+      <!-- ===== НИЖНЕЕ ВИДЕО (анимация) ===== -->
+      <div class="video-full">
+        <div class="video-box">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="../video/Liberty.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </section>
   </main>
 </body>
 </html>
