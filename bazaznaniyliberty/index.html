@@ -132,26 +132,51 @@
       .content h2{ font-size: 24px; }
     }
   </style>
+
+  <!-- FIX (как "Положение Liberty") -->
+  <style>
+    /* Оглавление как на "Положение Liberty" */
+    .toc { max-width: 100% !important; margin: 10px 0 0 !important; }
+    .toc, .toc .section, .toc .subsection { text-align: left !important; }
+
+    /* ВАЖНО: НЕ трогаем h1::after — фиолетовая линия под H1 должна быть */
+
+    /* Если нужно убрать линии под подзаголовками (но не под H1) */
+    h2::after,
+    h3::after,
+    .section-title::after,
+    .title::after{
+      display: none !important;
+      content: none !important;
+    }
+
+    /* Active подсветка из скрипта (если в base нет стиля .active) */
+    #toc a.active{
+      background: var(--active, #f1f1f1);
+      border-radius: 8px;
+      padding: 2px 6px;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- ВАЖНО: меняем ТОЛЬКО оболочку под общий стиль -->
   <div class="container">
     <h1>База знаний трейдера Liberty</h1>
 
-    <!-- Контент НЕ меняем: сохраняем тот же список/якоря/скрипт -->
     <div class="content" style="margin-top: 18px;">
 
-      <ul class="toc" id="toc">
-        <li><a href="#login">Вход в кабинет Liberty</a></li>
-        <li><a href="#accept">Работа с приёмом</a></li>
-        <li><a href="#payouts">Работа с выплатами</a></li>
-        <li><a href="#finance">Финансовые вопросы</a></li>
-      </ul>
+      <!-- ОГЛАВЛЕНИЕ (как на "Положение Liberty"), ЯКОРЯ НЕ МЕНЯЛ -->
+      <div class="toc" id="toc" style="max-width: 100%; margin: 10px 0 0;">
+        <div class="section"><a href="#login">Вход в кабинет Liberty</a></div>
+        <div class="section"><a href="#accept">Работа с приёмом</a></div>
+        <div class="section"><a href="#payouts">Работа с выплатами</a></div>
+        <div class="section"><a href="#finance">Финансовые вопросы</a></div>
+      </div>
 
       <hr />
 
-      <section class="content">
+      <!-- КОНТЕНТ (НЕ ТРОГАЮ) -->
+      <section>
 
         <h2 id="login">Вход в кабинет Liberty</h2>
 
