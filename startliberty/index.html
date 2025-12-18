@@ -187,6 +187,24 @@
       overflow-x: hidden;
     }
   </style>
+
+  <!-- FIX стили (как в "Положение Liberty") -->
+  <style>
+    /* Оглавление как на "Положение Liberty" */
+    .toc { max-width: 100% !important; margin: 10px 0 0 !important; }
+    .toc, .toc .section, .toc .subsection { text-align: left !important; }
+
+    /* ВАЖНО: НЕ трогаем h1::after — фиолетовая линия под H1 должна быть */
+
+    /* Если надо убрать линии под подзаголовками внутри контента — убираем только у h2/h3 */
+    h2::after,
+    h3::after,
+    .section-title::after,
+    .title::after{
+      display: none !important;
+      content: none !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -195,25 +213,25 @@
     <h1>Начало работы на Liberty</h1>
 
     <!-- ОГЛАВЛЕНИЕ (кликабельное) -->
-    <div class="toc">
-      <div class="section"><a href="#pre-actions">Начало работы: предварительные действия</a></div>
+    <div class="content" style="margin-top: 18px;">
 
-      <div class="section"><a href="#start-material">Начало установки материала в работу</a></div>
-      <div class="subsection"><a href="#device-register">Регистрация устройства в системе Liberty</a></div>
-      <div class="subsection"><a href="#app-setup">Установка приложения и настройка устройств</a></div>
-      <div class="subsection"><a href="#app-update">Обновление приложения Liberty</a></div>
-      <div class="subsection"><a href="#device-add">Добавление устройства</a></div>
-      <div class="subsection"><a href="#requisite-add">Установка реквизита</a></div>
-      <div class="subsection"><a href="#selfcheck">Самопроверка</a></div>
+      <div class="toc" style="max-width: 100%; margin: 10px 0 0;">
+        <div class="section"><a href="#pre-actions">Начало работы: предварительные действия</a></div>
 
-      <div class="section"><a href="#disputes">Споры</a></div>
-    </div>
+        <div class="section"><a href="#start-material">Начало установки материала в работу</a></div>
+        <div class="subsection"><a href="#device-register">Регистрация устройства в системе Liberty</a></div>
+        <div class="subsection"><a href="#app-setup">Установка приложения и настройка устройств</a></div>
+        <div class="subsection"><a href="#app-update">Обновление приложения Liberty</a></div>
+        <div class="subsection"><a href="#device-add">Добавление устройства</a></div>
+        <div class="subsection"><a href="#requisite-add">Установка реквизита</a></div>
+        <div class="subsection"><a href="#selfcheck">Самопроверка</a></div>
 
-    <hr />
+        <div class="section"><a href="#disputes">Споры</a></div>
+      </div>
 
-    <!-- КОНТЕНТ -->
-    <div class="content">
+      <hr />
 
+      <!-- КОНТЕНТ (НЕ ТРОГАЮ) -->
       <h2 id="pre-actions">Начало работы: предварительные действия</h2>
       <ol>
         <li>Прочитать инструкцию, положение и описание платформы;</li>
