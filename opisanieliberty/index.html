@@ -13,58 +13,68 @@
   <!-- Общий стиль -->
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
 
-  <style>
-    /* Стили только для оглавления на этой странице (серые подчёркнутые + отступы) */
-    .toc-block{
-      max-width: 520px;
-      margin: 0 auto 34px;
-    }
+ <style>
+      /* Стили только для оглавления на этой странице (серые подчёркнутые + отступы) */
+      .toc-block{
+        max-width: 520px;
+        margin: 0 auto 34px;
+      }
 
-    /* "Раздел" (не ссылка) */
-    .toc-heading a{
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.9;
-      font-weight: 500;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+      /* ===== ОГЛАВЛЕНИЕ: иерархия как на рефе ===== */
+      .toc{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-    .toc-heading a:hover{
-      color: var(--link);
-    }
+      .toc li{
+        margin: 6px 0;
+        line-height: 1.9;
+      }
 
-    /* Подразделы — как на скрине: сероватые, подчёркнутые, с отступом */
-    .toc-block .subsection{
-      margin-left: 24px;
-      line-height: 1.9;
-    }
+      .toc a{
+        color: var(--muted);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
 
-    .toc-block a{
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .toc-block a:hover{ color: var(--link); }
+      .toc a:hover{
+        color: var(--link);
+      }
+   
+      /* Уровни */
+      .toc-h2 a{
+        padding-left: 0;
+        font-size: 16px;
+        font-weight: 500;
+        display: inline-block;
+      }
 
-    /* Чуть разделить оглавление и контент */
-    .divider{
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 36px 0;
-    }
+      .toc-h3 a{
+        padding-left: 24px;
+        font-size: 16px;
+        font-weight: 400;
+        display: inline-block;
+      }
 
-    /* Карточки/врезки оставляем, чтобы не ломать твой контент */
-    .callout{
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:14px 16px;
-      background:#fff;
-      box-shadow: 0 10px 22px rgba(0,0,0,.03);
-      margin:14px 0 18px;
-    }
-    .callout b{ display:block; margin-bottom:6px; }
-  </style>
+      /* Чуть разделить оглавление и контент */
+      .divider{
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 36px 0;
+     }
+
+      /* Карточки/врезки оставляем, чтобы не ломать твой контент */
+      .callout{
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:14px 16px;
+        background:#fff;
+        box-shadow: 0 10px 22px rgba(0,0,0,.03);
+        margin:14px 0 18px;
+      }
+      .callout b{ display:block; margin-bottom:6px; }
+    </style>
 </head>
 
 <body>
@@ -73,21 +83,21 @@
     <h1>Описание процессинговой платформы Liberty</h1>
 
     <!-- ОГЛАВЛЕНИЕ (как у тебя на рефе) -->
-    <div class="toc-block">
-      <div class="toc-heading">
-        <a href="#menu">Меню навигации</a>
-      </div>
+   <div class="toc-block">
+      <ul class="toc">
+        <li class="toc-h2"><a href="#menu">Меню навигации</a></li>
 
-      <div class="subsection"><a href="#home">Главная</a></div>
-      <div class="subsection"><a href="#requisites">Реквизиты</a></div>
-      <div class="subsection"><a href="#deals">Сделки</a></div>
-      <div class="subsection"><a href="#disputes">Споры</a></div>
-      <div class="subsection"><a href="#finance">Финансы</a></div>
-      <div class="subsection"><a href="#stats">Статистика</a></div>
-      <div class="subsection"><a href="#notifications">Уведомления</a></div>
-      <div class="subsection"><a href="#messages">Сообщения</a></div>
-      <div class="subsection"><a href="#settings">Настройки</a></div>
-      <div class="subsection"><a href="#devices">Устройства</a></div>
+        <li class="toc-h3"><a href="#home">Главная</a></li>
+        <li class="toc-h3"><a href="#requisites">Реквизиты</a></li>
+        <li class="toc-h3"><a href="#deals">Сделки</a></li>
+        <li class="toc-h3"><a href="#disputes">Споры</a></li>
+        <li class="toc-h3"><a href="#finance">Финансы</a></li>
+        <li class="toc-h3"><a href="#stats">Статистика</a></li>
+        <li class="toc-h3"><a href="#notifications">Уведомления</a></li>
+        <li class="toc-h3"><a href="#messages">Сообщения</a></li>
+        <li class="toc-h3"><a href="#settings">Настройки</a></li>
+        <li class="toc-h3"><a href="#devices">Устройства</a></li>
+      </ul>
     </div>
 
     <hr class="divider" />
