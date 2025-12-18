@@ -24,16 +24,22 @@
       overflow: hidden;
       background: #000;
     }
-
     .video-hero video {
       width: 100%;
       height: 100%;
       object-fit: cover; /* ОБРЕЗКА */
+      display: block;
     }
 
-    /* ===== НИЖНЕЕ ВИДЕО (целиком) ===== */
+    /* ===== НИЖНИЙ БЛОК (как анимация, меньше) ===== */
     .video-full {
-      margin-top: 36px;
+      margin-top: 28px;
+      display: flex;
+      justify-content: center; /* центрируем */
+    }
+
+    .video-full .video-box {
+      width: min(820px, 100%); /* МЕНЬШЕ, чем контейнер */
     }
 
     .video-full video {
@@ -41,6 +47,8 @@
       height: auto;
       border-radius: 14px;
       display: block;
+      background: #000;
+      outline: none;
     }
   </style>
 </head>
@@ -81,11 +89,13 @@
         <a href="https://liberty.top" target="_blank" rel="noopener noreferrer">liberty.top</a>
       </p>
 
-      <!-- ===== НИЖНЕЕ ВИДЕО (ЦЕЛИКОМ) ===== -->
+      <!-- ===== НИЖНЕЕ "АНИМАЦИЯ" (без контролов) ===== -->
       <div class="video-full">
-        <video controls>
-          <source src="./video/Liberty.mp4" type="video/mp4">
-        </video>
+        <div class="video-box">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="./video/Liberty.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
     </div>
