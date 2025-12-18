@@ -14,116 +14,18 @@
   <link rel="stylesheet" href="../assets/css/liberty-base.css">
 
   <style>
-    /* ===============================
-       ОГЛАВЛЕНИЕ: слева + без фиолетовых линий
-       =============================== */
+    /* Делаем оглавление точно как на странице "Положение Liberty" */
+    .toc { max-width: 100% !important; margin: 10px 0 0 !important; }
+    .toc, .toc .section, .toc .subsection { text-align: left !important; }
 
-    /* ВАЖНО: убираем auto-centering блока (margin: 0 auto) и max-width,
-       чтобы оглавление стало по левому краю контентной колонки */
-    .container .toc-block{
-      max-width: none !important;
-      margin: 0 0 34px !important;
-      padding: 0 !important;
-      text-align: left !important;
-    }
-
-    .container .toc{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left !important;
-    }
-
-    .container .toc li{
-      margin: 6px 0;
-      line-height: 1.9;
-      text-align: left !important;
-    }
-
-    /* Ссылки оглавления: принудительно серые и подчёркнутые (НЕ border/box-shadow) */
-    .container .toc a,
-    .container .toc a:visited,
-    .container .toc a:hover,
-    .container .toc a:active,
-    .container .toc a:focus{
-      color: var(--muted) !important;
-      text-decoration: underline !important;
-      text-underline-offset: 3px !important;
-      text-decoration-color: currentColor !important;
-
-      /* убираем "фиолетовые линии" из базового CSS */
-      border: 0 !important;
-      border-bottom: 0 !important;
-      box-shadow: none !important;
-      background-image: none !important;
-      background: transparent !important;
-      outline: none !important;
-    }
-
-    /* Если база рисует линии через псевдо-элементы на ссылках */
-    .container .toc a::before,
-    .container .toc a::after{
-      content: none !important;
-      display: none !important;
-    }
-
-    /* Уровни */
-    .container .toc-h2 a{
-      padding-left: 0;
-      font-size: 16px;
-      font-weight: 500;
-      display: inline;
-    }
-
-    .container .toc-h3 a{
-      padding-left: 24px;
-      font-size: 16px;
-      font-weight: 400;
-      display: inline;
-    }
-
-    /* Разделитель */
-    .divider{
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 36px 0;
-    }
-
-    /* Карточки/врезки оставляем, чтобы не ломать твой контент */
-    .callout{
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:14px 16px;
-      background:#fff;
-      box-shadow: 0 10px 22px rgba(0,0,0,.03);
-      margin:14px 0 18px;
-    }
-    .callout b{ display:block; margin-bottom:6px; }
-
-    /* ===============================
-       УБРАТЬ линии под заголовками (если они реально там были)
-       =============================== */
-    h1::after,
+    /* ВАЖНО: НЕ трогаем h1::after — фиолетовая линия под H1 должна быть */
+    /* Если нужно убрать линии под подзаголовками внутри контента — оставляем только для h2/h3 */
     h2::after,
     h3::after,
     .section-title::after,
-    .title::after,
-    .content h1::after,
-    .content h2::after,
-    .content h3::after{
+    .title::after{
       display: none !important;
       content: none !important;
-      border: 0 !important;
-      background: transparent !important;
-      height: 0 !important;
-    }
-
-    h1, h2, h3,
-    .content h1, .content h2, .content h3,
-    .section-title, .title{
-      border-bottom: none !important;
-      box-shadow: none !important;
-      background-image: none !important;
     }
   </style>
 </head>
@@ -133,30 +35,28 @@
 
     <h1>Описание процессинговой платформы Liberty</h1>
 
-    <!-- ОГЛАВЛЕНИЕ -->
-    <div class="toc-block">
-      <ul class="toc">
-        <li class="toc-h2"><a href="#menu">Меню навигации</a></li>
+    <!-- ВАЖНО: как в "Положение Liberty" -->
+    <div class="content" style="margin-top: 18px;">
 
-        <li class="toc-h3"><a href="#home">Главная</a></li>
-        <li class="toc-h3"><a href="#requisites">Реквизиты</a></li>
-        <li class="toc-h3"><a href="#deals">Сделки</a></li>
-        <li class="toc-h3"><a href="#disputes">Споры</a></li>
-        <li class="toc-h3"><a href="#finance">Финансы</a></li>
-        <li class="toc-h3"><a href="#stats">Статистика</a></li>
-        <li class="toc-h3"><a href="#notifications">Уведомления</a></li>
-        <li class="toc-h3"><a href="#messages">Сообщения</a></li>
-        <li class="toc-h3"><a href="#settings">Настройки</a></li>
-        <li class="toc-h3"><a href="#devices">Устройства</a></li>
-      </ul>
-    </div>
+      <!-- ОГЛАВЛЕНИЕ (как на скрине 2) -->
+      <div class="toc" style="max-width: 100%; margin: 10px 0 0;">
+        <div class="section"><a href="#menu">Меню навигации</a></div>
 
-    <hr class="divider" />
+        <div class="subsection"><a href="#home">Главная</a></div>
+        <div class="subsection"><a href="#requisites">Реквизиты</a></div>
+        <div class="subsection"><a href="#deals">Сделки</a></div>
+        <div class="subsection"><a href="#disputes">Споры</a></div>
+        <div class="subsection"><a href="#finance">Финансы</a></div>
+        <div class="subsection"><a href="#stats">Статистика</a></div>
+        <div class="subsection"><a href="#notifications">Уведомления</a></div>
+        <div class="subsection"><a href="#messages">Сообщения</a></div>
+        <div class="subsection"><a href="#settings">Настройки</a></div>
+        <div class="subsection"><a href="#devices">Устройства</a></div>
+      </div>
 
-    <!-- КОНТЕНТ -->
-    <div class="content">
+      <hr />
 
-      <!-- МЕНЮ -->
+      <!-- КОНТЕНТ (НЕ МЕНЯЛ) -->
       <h2 id="menu">Меню навигации</h2>
 
       <p><b>Главная</b> — общая информация по финансам;</p>
@@ -186,9 +86,8 @@
         изменить фон своего токена, а так же выйти из токена.
       </div>
 
-      <hr class="divider" />
+      <hr />
 
-      <!-- ГЛАВНАЯ -->
       <h2 id="home">Главная</h2>
 
       <p><b>Сделки</b> — количество сделок.</p>
@@ -196,7 +95,7 @@
       <p><b>Общий баланс</b> — ваш баланс;</p>
       <p><b>График доходов за месяц</b> — можно смотреть ваши доходы за месяц.</p>
 
-      <hr class="divider" />
+      <hr />
 
       <h2 id="requisites">Реквизиты</h2>
       <p>Все реквизиты одним списком.</p>
@@ -302,4 +201,3 @@
   </div>
 </body>
 </html>
-
